@@ -98,13 +98,13 @@ PRODUCT_COPY_FILES += \
     vendor/lge/m3s/proprietary/sw-adec-omxmp3-test:/system/bin/sw-adec-omxmp3-test
 
 # egl
-##PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
+    vendor/lge/m3s/proprietary/libgsl.so:/system/lib/libgsl.so \
+    vendor/lge/m3s/proprietary/libOpenVG.so:/system/lib/libOpenVG.so \
     vendor/lge/m3s/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \
     vendor/lge/m3s/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \
     vendor/lge/m3s/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \
     vendor/lge/m3s/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \
-    vendor/lge/m3s/proprietary/libgsl.so:/system/lib/libgsl.so \
-    vendor/lge/m3s/proprietary/libOpenVG.so:/system/lib/libOpenVG.so \
     vendor/lge/m3s/proprietary/eglsubAndroid.so:/system/lib/egl/eglsubAndroid.so
 
 # Camera
@@ -113,13 +113,20 @@ PRODUCT_COPY_FILES += \
     vendor/lge/m3s/proprietary/liboemcamera.so:/obj/lib/liboemcamera.so \
     vendor/lge/m3s/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so \
     vendor/lge/m3s/proprietary/libmmipl.so:/system/lib/libmmipl.so \
-    vendor/lge/m3s/proprietary/libcamera.so:obj/lib/libcamera.so \
-    vendor/lge/m3s/proprietary/libcamera.so:/system/lib/libcamera.so 
+    vendor/lge/m3s/proprietary/libmmparser.so:system/lib/libmmparser.so \
+    vendor/lge/m3s/proprietary/libmm-abl.so:system/lib/libmm-abl.so \
+    vendor/lge/m3s/proprietary/libmmjps.so:system/lib/libmmjps.so \
+    vendor/lge/m3s/proprietary/libmmmpo.so:system/lib/libmmmpo.so \
+    vendor/lge/m3s/proprietary/libchromatix_s5k4e1_default_video.so:system/lib/libchromatix_s5k4e1_default_video.so \
+    vendor/lge/m3s/proprietary/libchromatix_s5k4e1_preview.so:system/lib/libchromatix_s5k4e1_preview.so \
+#    vendor/lge/m3s/proprietary/libcamera.so:obj/lib/libcamera.so \
+#    vendor/lge/m3s/proprietary/libcamera.so:/system/lib/libcamera.so \
 
 # Audio
 PRODUCT_COPY_FILES += \
     vendor/lge/m3s/proprietary/libaudioalsa.so:/obj/lib/libaudioalsa.so \
     vendor/lge/m3s/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \
+    vendor/lge/m3s/proprietary/libacdbloader.so:/system/lib/libacdbloader.so
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -224,15 +231,16 @@ vendor/lge/m3s/proprietary/libQWiFiSoftApCfg.so:system/lib/libQWiFiSoftApCfg.so
 
 # Not sure yet or just lazy
 PRODUCT_COPY_FILES += \
-vendor/lge/m3s/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
-vendor/lge/m3s/proprietary/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
-vendor/lge/m3s/proprietary/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
 vendor/lge/m3s/proprietary/lib_LG_fastaf.so:system/lib/lib_LG_fastaf.so \
 vendor/lge/m3s/proprietary/libC2D2.so:system/lib/libC2D2.so \
 vendor/lge/m3s/proprietary/libcne.so:system/lib/libcne.so \
 vendor/lge/m3s/proprietary/libcneutils.so:system/lib/libcneutils.so \
 vendor/lge/m3s/proprietary/librefcne.so:system/lib/librefcne.so \
-vendor/lge/m3s/proprietary/libmmparser.so:system/lib/libmmparser.so
+vendor/lge/m3s/proprietary/libsc-a2xx.so:system/lib/libsc-a2xx.so
+
+#vendor/lge/m3s/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+#vendor/lge/m3s/proprietary/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \
+#vendor/lge/m3s/proprietary/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
 
 # Flash player
 PRODUCT_COPY_FILES += \
@@ -241,4 +249,29 @@ vendor/lge/m3s/proprietary/libstagefright_froyo.so:system/lib/plugins/com.adobe.
 vendor/lge/m3s/proprietary/libstagefright_honeycomb.so:system/lib/plugins/com.adobe.flashplayer/libstagefright_honeycomb.so \
 vendor/lge/m3s/proprietary/libysshared.so:system/lib/plugins/com.adobe.flashplayer/libysshared.so
 
+#modules
+PRODUCT_COPY_FILES += \
+vendor/lge/m3s/proprietary/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
+vendor/lge/m3s/proprietary/cls_flow.ko:system/lib/modules/cls_flow.ko \
+vendor/lge/m3s/proprietary/cpaccess.ko:system/lib/modules/cpaccess.ko \
+vendor/lge/m3s/proprietary/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
+vendor/lge/m3s/proprietary/dma_test.ko:system/lib/modules/dma_test.ko \
+vendor/lge/m3s/proprietary/evbug.ko:system/lib/modules/evbug.ko \
+vendor/lge/m3s/proprietary/librasdioif.ko:system/lib/modules/librasdioif.ko \
+vendor/lge/m3s/proprietary/mtd_erasepart.ko:system/lib/modules/mtd_erasepart.ko \
+vendor/lge/m3s/proprietary/mtd_nandecctest.ko:system/lib/modules/mtd_nandecctest.ko \
+vendor/lge/m3s/proprietary/mtd_oobtest.ko:system/lib/modules/mtd_oobtest.ko \
+vendor/lge/m3s/proprietary/mtd_pagetest.ko:system/lib/modules/mtd_pagetest.ko \
+vendor/lge/m3s/proprietary/mtd_readtest.ko:system/lib/modules/mtd_readtest.ko \
+vendor/lge/m3s/proprietary/mtd_speedtest.ko:system/lib/modules/mtd_speedtest.ko \
+vendor/lge/m3s/proprietary/mtd_stresstest.ko:system/lib/modules/mtd_stresstest.ko \
+vendor/lge/m3s/proprietary/mtd_subpagetest.ko:system/lib/modules/mtd_subpagetest.ko \
+vendor/lge/m3s/proprietary/mtd_torturetest.ko:system/lib/modules/mtd_torturetest.ko \
+vendor/lge/m3s/proprietary/oprofile.ko:system/lib/modules/oprofile.ko \
+vendor/lge/m3s/proprietary/qcedev.ko:system/lib/modules/qcedev.ko \
+vendor/lge/m3s/proprietary/qce.ko:system/lib/modules/qce.ko \
+vendor/lge/m3s/proprietary/qcrypto.ko:system/lib/modules/qcrypto.ko \
+vendor/lge/m3s/proprietary/reset_modem.ko:system/lib/modules/reset_modem.ko \
+vendor/lge/m3s/proprietary/sch_dsmark.ko:system/lib/modules/sch_dsmark.ko \
+vendor/lge/m3s/proprietary/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
 
