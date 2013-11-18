@@ -119,8 +119,8 @@ PRODUCT_COPY_FILES += \
     vendor/lge/m3s/proprietary/libmmmpo.so:system/lib/libmmmpo.so \
     vendor/lge/m3s/proprietary/libchromatix_s5k4e1_default_video.so:system/lib/libchromatix_s5k4e1_default_video.so \
     vendor/lge/m3s/proprietary/libchromatix_s5k4e1_preview.so:system/lib/libchromatix_s5k4e1_preview.so \
-#    vendor/lge/m3s/proprietary/libcamera.so:obj/lib/libcamera.so \
-#    vendor/lge/m3s/proprietary/libcamera.so:/system/lib/libcamera.so \
+    vendor/lge/m3s/proprietary/libcamera.so:obj/lib/libcamera.so \
+    vendor/lge/m3s/proprietary/libcamera.so:/system/lib/libcamera.so \
 
 # Audio
 PRODUCT_COPY_FILES += \
